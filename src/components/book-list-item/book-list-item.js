@@ -1,13 +1,20 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import './book-list-item.sass';
 
 const BookListItem = (book) => {
-  const { title, author } = book.book;
+  const { title, author, price, coverImage } = book.book;
   return (
-    <Fragment>
-      <span>{title}</span>
-      <span>{author}</span>
-    </Fragment>
+    <div className="book-list-item">
+      <div className="book-cover">
+        <img src={coverImage} alt=""/>
+      </div>
+      <div className="book-details">
+        <a href="/" className="book-title">{title}</a>
+        <div className="book-author">{author}</div>
+        <div className="book-price">${price}</div>
+        <button className="btn btn-info add-to-cart">Add to cart</button>
+      </div>
+    </div>
   );
 }
 

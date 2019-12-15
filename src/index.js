@@ -10,6 +10,8 @@ import { BookstoreServiceProvider } from './components/bookstore-service-context
 
 import store from './store';
 
+import './index.sass'
+
 const bookStoreService = new BookstoreService();
 const root = document.querySelector('#root');
 
