@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
 import reducer from './reducers';
 
 const stringMiddleWare = () => (next) => (action) => {
@@ -10,6 +11,6 @@ const stringMiddleWare = () => (next) => (action) => {
   return next(action);
 }
 
-const store = createStore(reducer, applyMiddleware(stringMiddleWare));
+const store = createStore(reducer, applyMiddleware(thunkMiddleware, stringMiddleWare));
 
 export default store;
